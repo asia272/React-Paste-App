@@ -1,0 +1,22 @@
+.app {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 2rem;;
+  width: 100%;
+  max-width: 1200px; 
+  width: 700px;
+}
+.heading{
+  font-size: 3rem;
+}
+@media (max-width:705px) {
+  .app{
+    width: auto;
+  }
+}
+

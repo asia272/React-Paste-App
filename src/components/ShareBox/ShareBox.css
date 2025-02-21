@@ -1,0 +1,54 @@
+.share-box-container {
+   background-color: #5439a0;
+   position: fixed; 
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); 
+   padding: 2rem;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+   width: 90%; 
+   max-width: 400px; 
+   box-shadow: 0 0 10px rgba(64, 15, 128, 0.3);
+   z-index: 1000;
+}
+
+/* Close button */
+.close-share-links-btn {
+   border: none;
+   background: inherit;
+   color: white;
+   font-size: 1.5rem;
+   cursor: pointer;
+   align-self: flex-end; 
+}
+
+.close-share-links-btn:hover {
+   transform: scale(1.1);
+}
+
+/* Share links */
+.share-box-container div {
+   margin: 0;
+   font-size: 1rem;
+}
+
+.share-box-container a {
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s ease-in-out;
+}
+.links{
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+.link{
+   display: flex;
+   align-items: center;
+   gap: 0.3rem;
+}
+

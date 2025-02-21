@@ -1,0 +1,26 @@
+.view-paste-container{
+    border: 2px solid #111;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 10px;
+}
+.view-paste-container h1{
+    border-bottom: 2px solid #111;
+}
+.view-paste-box{
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: auto;
+    width: 500px;
+    width: 100%;
+}
+.back-btn{
+    padding: 0.5rem 0.9rem;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    background-color: #5439a0;
+}

@@ -1,0 +1,25 @@
+/* Reset & Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  min-width: 300px;
+  overflow-x: hidden;
+  scroll-behavior: smooth; 
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  background-color: black;
+  padding: 2rem; 
+  color: white;
+}
+

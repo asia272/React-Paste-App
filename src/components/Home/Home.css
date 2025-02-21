@@ -1,0 +1,98 @@
+.home-container{
+    background-color:black;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+
+.home {
+    width: 100%;
+    display: flex;
+    height: auto; 
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+}
+
+/* Input Field */
+.home input {
+    flex: 1; 
+    border: none;
+    outline: none; 
+    min-width: 150px; 
+    padding: 10px;
+    border-radius: 10px;
+    height: 35px;
+    background-color: rgb(36, 36, 46);
+}
+
+.home input:focus {
+    outline: 1px solid #5439a0;
+   
+}
+/* Button */
+.home button {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #5439a0;
+    transition: all 0.2s ease-in;
+    font-weight: 700;
+}
+.home button:active{
+    transform: scale(0.9);
+}
+.content{
+    width: 100%;
+    background-color: #333;
+    padding:0px 5px 5px 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.text-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 8px;
+    align-items: center;
+}
+.home-container textarea{
+    padding: 10px;
+    resize: none;
+    border-radius: 10px;
+    outline:none;
+    border: none;
+    background-color: rgb(36, 36, 46);
+    width: 100%;
+}
+.dots-box{
+    display: flex;
+    gap: 3px;
+}
+.dots-box div{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+.red-dot{
+    background-color: red;
+}
+.yellow-dot{
+    background-color: yellow;
+}
+.green-dot{
+    background-color: green;
+}
+@media (max-width: 600px) {
+    .home input {
+        width: 100%; /* Input takes full width */
+        flex-basis: 100%;
+    }
+    
+    .home button {
+        width: 100%; /* Button moves to next line */
+    }
+}
