@@ -11,6 +11,7 @@
   width: 700px;
   min-width: 400px;
   overflow: auto;
+  padding: 2rem;
 }
 .heading{
   font-size: 3rem;
