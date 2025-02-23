@@ -1,15 +1,16 @@
 .app {
-  margin-top: 3rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
+  background-color: red;
   justify-content: center;
   align-items: center;
   min-height: 300px;
-  padding: 2rem;;
   width: 100%;
   max-width: 1200px; 
   width: 700px;
+  min-width: 400px;
+  overflow: auto;
 }
 .heading{
   font-size: 3rem;

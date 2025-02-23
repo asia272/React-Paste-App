@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    /* background-color:black; */  
+    background-color:aliceblue;  
       padding: 15px 20px;
     color: white;
     display: flex;
@@ -11,6 +11,8 @@
     align-items: center;
     z-index: 1000; 
     height: 50px;
+    margin-bottom: 10px;
+    position: absolute;
   }
   
   .nav-links {

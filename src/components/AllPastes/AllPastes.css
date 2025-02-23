@@ -46,6 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+
     gap: 0.6rem;
 }
 .paste-btn{
@@ -59,4 +60,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@media (max-width:600px) {
+    .paste-box{
+        flex-direction: column-reverse;
+    }
+    .links-box{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
