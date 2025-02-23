@@ -5,6 +5,7 @@
     width: 100%;
     padding: 15px 20px;
     background-color:#222;
+    background-image: linear-gradient(270deg, #18161f, #130e24);
     color: white;
     display: flex;
     gap: 14px;

@@ -4,7 +4,7 @@ import "./Navbar.css"; // Import CSS for styling
 function Navbar() {
   return (
     <nav className="navbar">
-      <h1 className="logo">Past App</h1>
+      <h1 className="logo">Paste App</h1>
       <ul className="nav-links">
         <li>
           <NavLink to="/" className="nav-link">Home</NavLink>
