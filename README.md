@@ -9,5 +9,6 @@
 - 🔗 **Share Pastes** – Share via WhatsApp, Facebook, Twitter, and LinkedIn.  
 - 📅 **Date Tracking** – View the creation date of pastes.  
 - 🎨 **Responsive UI** – Works smoothly on all screen sizes.  
-- 🖱️ **Hover Tooltips** – Shows helpful messages when hovering over action buttons (e.g., "Copy", "Delete").  
+- 🖱️ **Hover Tooltips** – Shows helpful messages when hovering over action buttons (e.g., "Copy", "Delete").
+- 🔔 **Toast Notifications** – Get real-time feedback with notifications when you add, delete, or copy a paste.  
 
