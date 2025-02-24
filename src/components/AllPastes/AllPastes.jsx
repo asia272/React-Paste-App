@@ -10,6 +10,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { deleteToPaste } from '../../features/pasteSlice';
 import toast from 'react-hot-toast';
 import ShareBox from '../ShareBox/ShareBox';
+import { Tooltip } from "@mui/material";
 
 const AllPastes = () => {
   const pastes = useSelector((state) => state.paste.pastes)
@@ -23,18 +24,12 @@ const AllPastes = () => {
   }
   let handleCopy = (paste) => {
     navigator.clipboard.writeText(paste.pasteContent)
-    toast.success("Copy to clipboard")
+    toast.success("Copied to clipboard")
   }
   const handleShare = (paste) => {
     const sharePasteUrl = `${window.location.origin}/allPastes/${paste.id}`;
-
-    setSharePaste(
-      {
-        sharePasteUrl: sharePasteUrl,
-        paste: paste
-      })
+    setSharePaste({ sharePasteUrl: sharePasteUrl, paste: paste });
   };
-
 
   let filterPaste = pastes.filter((pastes) =>
     pastes.pasteTitle.toLowerCase()
@@ -45,7 +40,7 @@ const AllPastes = () => {
 
       <input type="text"
         className="search-paste"
-        placeholder='search your paste...'
+        placeholder='Search your paste...'
         value={searchPaste}
         onChange={(e) => setSearchPaste(e.target.value)}
       />
@@ -64,40 +59,45 @@ const AllPastes = () => {
               </div>
               <div className="links-box">
                 <div className="paste-btn">
-                  <div>
-                    <NavLink
-                      to={`/?pastId=${paste?.id}`}
-                      className="edit"
-                    >
+
+                  {/* Edit Button with Tooltip */}
+                  <Tooltip title="Edit"  arrow>
+                    <NavLink to={`/?pastId=${paste?.id}`} className="edit">
                       <EditIcon />
                     </NavLink>
-                  </div>
-                  <div onClick={() => handleDelete(paste?.id)}
-                    className="delete">
-                    <DeleteIcon />
-                  </div>
+                  </Tooltip>
 
-                  <div onClick={() => handleCopy(paste)}>
-                    <NavLink
-                      className="copy"
-                    >
+                  {/* Delete Button with Tooltip */}
+                  <Tooltip
+                    title="Delete"
+                    arrow
+                  >
+                    <div className="delete" onClick={() => handleDelete(paste?.id)}>
+                      <DeleteIcon />
+                    </div>
+                  </Tooltip>
+
+                  {/* Copy Button with Tooltip */}
+                  <Tooltip title="Copy"  arrow>
+                    <div className="copy" onClick={() => handleCopy(paste)}>
                       <ContentCopyIcon />
-                    </NavLink>
-                  </div>
-                  <div onClick={() => handleShare(paste)}>
-                    <NavLink
-                      className="share">
+                    </div>
+                  </Tooltip>
 
+                  {/* Share Button with Tooltip */}
+                  <Tooltip title="Share"  arrow>
+                    <div className="share" onClick={() => handleShare(paste)}>
                       <ShareIcon />
-                    </NavLink>
-                  </div>
-                  <div>
-                    <NavLink
-                      className="view"
-                      to={`/allPastes/${paste?.id}`}>
+                    </div>
+                  </Tooltip>
+
+                  {/* View Button with Tooltip */}
+                  <Tooltip title="View"  arrow>
+                    <NavLink to={`/allPastes/${paste?.id}`} className="view">
                       <VisibilityIcon />
                     </NavLink>
-                  </div>
+                  </Tooltip>
+
                 </div>
                 <div className="date">
                   {(paste.created_at.slice(4, 15))}
@@ -108,11 +108,11 @@ const AllPastes = () => {
         }
       </div>
       {sharePaste && sharePaste.sharePasteUrl && (
-        <ShareBox sharePaste={sharePaste} setSharePaste ={setSharePaste}/>
+        <ShareBox sharePaste={sharePaste} setSharePaste={setSharePaste} />
       )}
 
     </div>
   )
 }
 
-export default AllPastes
+export default AllPastes;

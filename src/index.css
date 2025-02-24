@@ -16,5 +16,7 @@ body {
   background-color: black;
   padding: 2rem; 
   color: white;
+  display: grid;
+  place-items: center;
 }
 
