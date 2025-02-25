@@ -11,6 +11,8 @@ import { deleteToPaste } from '../../features/pasteSlice';
 import toast from 'react-hot-toast';
 import ShareBox from '../ShareBox/ShareBox';
 import { Tooltip } from "@mui/material";
+import { motion } from "framer-motion";
+
 
 const AllPastes = () => {
   const pastes = useSelector((state) => state.paste.pastes)
@@ -36,15 +38,28 @@ const AllPastes = () => {
       .includes(searchPaste.toLowerCase()));
 
   return (
-    <div className='pastes-container'>
+  
+      <div
+        className='pastes-container'
+    
+      >
 
-      <input type="text"
+      <motion.input type="text" 
         className="search-paste"
+        initial={{ opacity: 0 ,x:96}}
+        animate={{ opacity: 1 , x:0}}
+        transition={{ duration: 1 }}
         placeholder='Search your paste...'
         value={searchPaste}
         onChange={(e) => setSearchPaste(e.target.value)}
-      />
-      <div className="all-pastes">
+      >
+      </motion.input>
+      <motion.div
+      initial={{ opacity: 0 ,x:-196}}
+      animate={{ opacity: 1 , x:0}}
+      transition={{ duration: 1 }}
+       className="all-pastes"
+       >
         <h1 className='all-paste-heading'>All Pastes</h1>
         {
           (filterPaste.length > 0 ? filterPaste : pastes).map((paste) => (
@@ -61,7 +76,7 @@ const AllPastes = () => {
                 <div className="paste-btn">
 
                   {/* Edit Button with Tooltip */}
-                  <Tooltip title="Edit"  arrow>
+                  <Tooltip title="Edit" arrow>
                     <NavLink to={`/?pastId=${paste?.id}`} className="edit">
                       <EditIcon />
                     </NavLink>
@@ -78,21 +93,21 @@ const AllPastes = () => {
                   </Tooltip>
 
                   {/* Copy Button with Tooltip */}
-                  <Tooltip title="Copy"  arrow>
+                  <Tooltip title="Copy" arrow>
                     <div className="copy" onClick={() => handleCopy(paste)}>
                       <ContentCopyIcon />
                     </div>
                   </Tooltip>
 
                   {/* Share Button with Tooltip */}
-                  <Tooltip title="Share"  arrow>
+                  <Tooltip title="Share" arrow>
                     <div className="share" onClick={() => handleShare(paste)}>
                       <ShareIcon />
                     </div>
                   </Tooltip>
 
                   {/* View Button with Tooltip */}
-                  <Tooltip title="View"  arrow>
+                  <Tooltip title="View" arrow>
                     <NavLink to={`/allPastes/${paste?.id}`} className="view">
                       <VisibilityIcon />
                     </NavLink>
@@ -106,12 +121,12 @@ const AllPastes = () => {
             </div>
           ))
         }
-      </div>
+      </motion.div>
       {sharePaste && sharePaste.sharePasteUrl && (
         <ShareBox sharePaste={sharePaste} setSharePaste={setSharePaste} />
       )}
 
-    </div>
+   </div>
   )
 }
 

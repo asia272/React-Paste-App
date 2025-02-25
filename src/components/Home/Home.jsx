@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addToPaste, updateToPaste } from '../../features/pasteSlice';
 import { v4 as uuidv4 } from 'uuid';
 import { useSearchParams } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { useMediaQuery } from '@mui/material';
 
 
 const Home = () => {
@@ -17,7 +19,7 @@ const Home = () => {
   let [content, setContent] = useState("")
 
   useEffect(() => {
-    if(pastId){
+    if (pastId) {
       let filterPaste = pastes.filter((paste) => paste.id === pastId)
       setTitle(filterPaste[0].pasteTitle)
       setContent(filterPaste[0].pasteContent)
@@ -45,7 +47,12 @@ const Home = () => {
   }
 
   return (
-    <div className='home-container'>
+    <motion.div
+      className='home-container'
+      initial={{ opacity: 0, x: 196 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className='home'>
         <input type="text"
           placeholder='Enter your past'
@@ -74,7 +81,7 @@ const Home = () => {
         </textarea>
       </div>
 
-    </div>
+    </motion.div>
   )
 }
 

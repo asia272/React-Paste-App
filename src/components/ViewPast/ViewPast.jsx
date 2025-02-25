@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import "./ViewPast.css"
 import { NavLink } from 'react-router-dom'
+import { motion } from "framer-motion";
 
 const ViewPast = () => {
     let id = useParams();
@@ -14,7 +15,11 @@ const ViewPast = () => {
     console.log(findViewPaste)
 
     return (
-        <div className='view-paste-container'>
+        <motion.div className='view-paste-container'
+        initial={{ opacity: 0 ,y:196}}
+        animate={{ opacity: 1 , y:0}}
+        transition={{ duration: 1 }}
+        >
             <h1>Paste Details</h1>
             <div className="view-paste-box">
                 <h2>
@@ -33,7 +38,7 @@ const ViewPast = () => {
 
             </NavLink>
 
-        </div>
+        </motion.div>
     )
 }
 
