@@ -11,5 +11,5 @@
 - 🎨 **Responsive UI** – Works smoothly on all screen sizes.  
 - 🖱️ **Hover Tooltips** – Shows helpful messages when hovering over action buttons (e.g., "Copy", "Delete").
 - 🔔 **Toast Notifications** – Get real-time feedback with notifications when you add, delete, or copy a paste.
-- 🎬 Smooth Animations – Implemented with Framer Motion to enhance UI transitions and interactions. 
+- 🎬 **Smooth Animations – Implemented with Framer Motion to enhance UI transitions and interactions. 
 
